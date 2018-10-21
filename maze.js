@@ -1,17 +1,26 @@
 function setEvents(){
-	var x  = document.getElementById("boundary1");
-	
-	x.onmouseover = function(){mouseOver()};
-/*	x.onmouseout = function(){mouseOut()}; */
+    var b = document.querySelectorAll('.boundary');
+    
+    for (var i = 0; i < b.length; i++){
+        
+         b[i].onmouseover = function(){
+             
+             for(var x = 0; x < b.length; x++){
+                 var elem = b[x];
+                 elem.classList.add('youlose');
+             }
+         }
+    
+    }
 
-function mouseOver(){
-	x.classList.add('youlose');
 }
 
-/*function mouseOut(){
-    x.style.backgroundColor = "#eeeeee";
-} */
-}
-window.onload = function(){
-	setEvents();
-}
+
+
+window.onload= function(){
+    setEvents();
+};
+
+
+
+    
