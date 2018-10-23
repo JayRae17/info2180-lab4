@@ -1,43 +1,44 @@
-var touch = 0;
 function setEvents(){
     var e = document.querySelector('#end');
     var b = document.querySelectorAll('.boundary');
-    var touch = 0;
+    var s = document.querySelector('#start');
+   
     
     for (var i = 0; i < b.length; i++){
-      
+        
          b[i].onmouseover = function(){
-            touch = 1;
-            
+            var test;
             for(var x = 0; x < b.length; x++){
                 var elem = b[x];
                 elem.classList.add('youlose');
-            }
-            
-            if (touch == 1){
-                 e.onmouseover= function(){
-                    alert("You Lost");
-                 };
-            }
-        }; 
-     e.onmouseover= function(){
-        alert("You Won!");
-     };
-            
+                test =1;
+                }
                 
-    } 
+            s.onclick = function(){
+                for(var m = 0; m < b.length; m++){
+                    var el = b[m];
+                    el.classList.remove('youlose')
+                }
+            }
+            
+            e.onmouseover= function(){
+                alert("You Lose :(");
+            } 
+                
+            
+         }
+         
+    }; 
+    
+     e.onmouseover= function(){
+        alert("You Win!");
+     };
+     
+     
 }
-   // var check = function(e) {
-	  //  if(e.type == 'mouseover') {
-	//	console.log(10);
-    //	}
-//};
-    
-  // check(b);
-    
+   
 window.onload= function(){
     setEvents();
 };
-
 
 
