@@ -18,20 +18,21 @@ function setEvents(){
                 for(var m = 0; m < b.length; m++){
                     var el = b[m];
                     el.classList.remove('youlose')
+                    document.getElementById("status").innerHTML = 'Move your mouse over the "S" to begin.';
                 }
             }
             
-            e.onmouseover= function(){
-                alert("You Lose :(");
-            } 
+             e.onmouseover= function(){
+                    document.getElementById("status").innerHTML = "You Lose :(";
+             }
                 
             
          }
          
     }; 
     
-     e.onmouseover= function(){
-        alert("You Win!");
+      e.onmouseover= function(){
+        document.getElementById("status").innerHTML = "You Win!";
      };
      
      
