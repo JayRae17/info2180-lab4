@@ -2,16 +2,17 @@ function setEvents(){
     var e = document.querySelector('#end');
     var b = document.querySelectorAll('.boundary');
     var s = document.querySelector('#start');
+    var maze = document.querySelector('#maze');
+    
    
     
     for (var i = 0; i < b.length; i++){
         
          b[i].onmouseover = function(){
-            var test;
+    
             for(var x = 0; x < b.length; x++){
                 var elem = b[x];
                 elem.classList.add('youlose');
-                test =1;
                 }
                 
             s.onclick = function(){
@@ -27,6 +28,17 @@ function setEvents(){
              }
                 
             
+         }
+         
+         maze.onmouseleave = function(){
+    
+            for(var n = 0; n < b.length; n++){
+                var le = b[n];
+                le.classList.add('youlose');
+                 e.onmouseover= function(){
+                    document.getElementById("status").innerHTML = "You Lose :(";
+                 }
+            }
          }
          
     }; 
